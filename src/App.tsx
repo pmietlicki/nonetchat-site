@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { I18nextProvider } from 'react-i18next';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import i18n from './i18n';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -26,51 +27,34 @@ const HomePage = () => (
   </main>
 );
 
-function App() {
-  const [path, setPath] = React.useState(window.location.pathname);
-
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute('href');
-    if (href) {
-      window.history.pushState({}, '', href);
-      setPath(href);
-      window.scrollTo(0, 0); // Scroll to top on page change
-    }
-  };
-
+const AppContent = () => {
+  const location = useLocation();
   React.useEffect(() => {
-    const onLocationChange = () => {
-      setPath(window.location.pathname);
-    };
-    window.addEventListener('popstate', onLocationChange);
-    return () => {
-      window.removeEventListener('popstate', onLocationChange);
-    };
-  }, []);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
-  let Component;
-  switch (path) {
-    case '/privacy':
-      Component = Privacy;
-      break;
-    case '/terms':
-      Component = Terms;
-      break;
-    default:
-      Component = HomePage;
-  }
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
+function App() {
   return (
     <Suspense fallback="loading">
       <I18nextProvider i18n={i18n}>
-        <div className="min-h-screen bg-white flex flex-col">
-          <Header onLinkClick={handleLinkClick} />
-          <div className="flex-grow">
-            <Component />
-          </div>
-          <Footer onLinkClick={handleLinkClick} />
-        </div>
+        <Router>
+          <AppContent />
+        </Router>
       </I18nextProvider>
     </Suspense>
   );

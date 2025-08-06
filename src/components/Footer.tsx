@@ -1,8 +1,9 @@
 import React from 'react';
 import { Github, Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-const Footer = ({ onLinkClick }) => {
+const Footer = () => {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
@@ -47,22 +48,22 @@ const Footer = ({ onLinkClick }) => {
             <h3 className="text-lg font-semibold mb-4">{t('footer_links')}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#fonctionnalites" onClick={onLinkClick} className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#fonctionnalites" className="text-gray-400 hover:text-white transition-colors duration-300">
                   {t('footer_features')}
                 </a>
               </li>
               <li>
-                <a href="#technologie" onClick={onLinkClick} className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#technologie" className="text-gray-400 hover:text-white transition-colors duration-300">
                   {t('footer_tech')}
                 </a>
               </li>
               <li>
-                <a href="#securite" onClick={onLinkClick} className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#securite" className="text-gray-400 hover:text-white transition-colors duration-300">
                   {t('footer_security')}
                 </a>
               </li>
               <li>
-                <a href="#faq" onClick={onLinkClick} className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#faq" className="text-gray-400 hover:text-white transition-colors duration-300">
                   {t('footer_faq')}
                 </a>
               </li>
@@ -74,14 +75,14 @@ const Footer = ({ onLinkClick }) => {
             <h3 className="text-lg font-semibold mb-4">{t('footer_legal')}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy" onClick={onLinkClick} className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors duration-300">
                   {t('footer_privacy')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" onClick={onLinkClick} className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-300">
                   {t('footer_terms')}
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="mailto:contact@nonetchat.com" className="text-gray-400 hover:text-white transition-colors duration-300">

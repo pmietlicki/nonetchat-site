@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Header = ({ onLinkClick }) => {
-  const { t, i18n } = useTranslation();
+const Header = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +17,10 @@ const Header = ({ onLinkClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e, path) => {
-    e.preventDefault();
+  const handleNavClick = (path: string) => {
     if (path.startsWith('#')) {
-      // It's a section link
       if (window.location.pathname !== '/') {
-        window.history.pushState({}, '', '/');
-        window.dispatchEvent(new PopStateEvent('popstate'));
+        navigate('/');
         setTimeout(() => {
           const element = document.getElementById(path.substring(1));
           if (element) {
@@ -35,8 +34,7 @@ const Header = ({ onLinkClick }) => {
         }
       }
     } else {
-      // It's a page link
-      onLinkClick(e);
+      navigate(path);
     }
     setIsMenuOpen(false);
   };
@@ -47,62 +45,32 @@ const Header = ({ onLinkClick }) => {
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img src="/assets/images/nonetchat.png" alt="NoNetChat Logo" className="h-8 w-8" />
             <span className={`text-xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
               NoNetChat
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#accueil"
-              onClick={(e) => handleNavClick(e, '#accueil')}
-              className={`hover:opacity-80 transition-all duration-300 ${
+            <button onClick={() => handleNavClick('#accueil')} className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
-              }`}
-            >
-              {t('Accueil')}
-            </a>
-            <a 
-              href="#fonctionnalites"
-              onClick={(e) => handleNavClick(e, '#fonctionnalites')}
-              className={`hover:opacity-80 transition-all duration-300 ${
+              }`}>{t('Accueil')}</button>
+            <button onClick={() => handleNavClick('#fonctionnalites')} className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
-              }`}
-            >
-              {t('footer_features')}
-            </a>
-            <a 
-              href="#technologie"
-              onClick={(e) => handleNavClick(e, '#technologie')}
-              className={`hover:opacity-80 transition-all duration-300 ${
+              }`}>{t('footer_features')}</button>
+            <button onClick={() => handleNavClick('#technologie')} className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
-              }`}
-            >
-              {t('footer_tech')}
-            </a>
-            <a 
-              href="#securite"
-              onClick={(e) => handleNavClick(e, '#securite')}
-              className={`hover:opacity-80 transition-all duration-300 ${
+              }`}>{t('footer_tech')}</button>
+            <button onClick={() => handleNavClick('#securite')} className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
-              }`}
-            >
-              {t('footer_security')}
-            </a>
-            <a 
-              href="#faq"
-              onClick={(e) => handleNavClick(e, '#faq')}
-              className={`hover:opacity-80 transition-all duration-300 ${
+              }`}>{t('footer_security')}</button>
+            <button onClick={() => handleNavClick('#faq')} className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
-              }`}
-            >
-              {t('footer_faq')}
-            </a>
+              }`}>{t('footer_faq')}</button>
             <a 
               href="https://play.google.com/store/apps/details?id=fr.pmietlicki.nonetchat"
               target="_blank"
@@ -129,41 +97,11 @@ const Header = ({ onLinkClick }) => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#accueil"
-                onClick={(e) => handleNavClick(e, '#accueil')}
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
-              >
-                {t('Accueil')}
-              </a>
-              <a
-                href="#fonctionnalites"
-                onClick={(e) => handleNavClick(e, '#fonctionnalites')}
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
-              >
-                {t('footer_features')}
-              </a>
-              <a
-                href="#technologie"
-                onClick={(e) => handleNavClick(e, '#technologie')}
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
-              >
-                {t('footer_tech')}
-              </a>
-              <a
-                href="#securite"
-                onClick={(e) => handleNavClick(e, '#securite')}
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
-              >
-                {t('footer_security')}
-              </a>
-              <a
-                href="#faq"
-                onClick={(e) => handleNavClick(e, '#faq')}
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
-              >
-                {t('footer_faq')}
-              </a>
+              <button onClick={() => handleNavClick('#accueil')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('Accueil')}</button>
+              <button onClick={() => handleNavClick('#fonctionnalites')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_features')}</button>
+              <button onClick={() => handleNavClick('#technologie')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_tech')}</button>
+              <button onClick={() => handleNavClick('#securite')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_security')}</button>
+              <button onClick={() => handleNavClick('#faq')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_faq')}</button>
               <a
                 href="https://play.google.com/store/apps/details?id=fr.pmietlicki.nonetchat"
                 target="_blank"

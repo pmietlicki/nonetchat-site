@@ -1,67 +1,51 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Screenshots = () => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
 
   const screenshots = [
     {
       title: t('screenshot_1_title'),
       description: t('screenshot_1_desc'),
-      image: "/assets/images/flutter_02.png"
+      image: "/assets/images/flutter_02.webp"
     },
     {
       title: t('screenshot_2_title'),
       description: t('screenshot_2_desc'),
-      image: "/assets/images/flutter_03.png"
+      image: "/assets/images/flutter_03.webp"
     },
     {
       title: t('screenshot_3_title'),
       description: t('screenshot_3_desc'),
-      image: "/assets/images/flutter_04.png"
+      image: "/assets/images/flutter_04.webp"
     },
     {
       title: t('screenshot_4_title'),
       description: t('screenshot_4_desc'),
-      image: "/assets/images/flutter_05.png"
+      image: "/assets/images/flutter_05.webp"
     },
     {
       title: t('screenshot_5_title'),
       description: t('screenshot_5_desc'),
-      image: "/assets/images/flutter_07.png"
+      image: "/assets/images/flutter_07.webp"
     },
     {
       title: t('screenshot_6_title'),
       description: t('screenshot_6_desc'),
-      image: "/assets/images/flutter_09.png"
+      image: "/assets/images/flutter_09.webp"
     },
     {
       title: t('screenshot_7_title'),
       description: t('screenshot_7_desc'),
-      image: "/assets/images/flutter_10.png"
+      image: "/assets/images/flutter_10.webp"
     }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -96,18 +80,18 @@ const Screenshots = () => {
         }`}>
           {/* Main Carousel */}
           <div className="relative max-w-4xl mx-auto">
-            <div className="flex items-center justify-center space-x-8">
+            <div className="flex flex-col md:flex-row items-center justify-center md:space-x-8">
               {/* Previous button */}
               <button
                 onClick={prevSlide}
-                className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
+                className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10 order-2 md:order-1"
                 aria-label="Image précédente"
               >
                 <ChevronLeft className="h-6 w-6 text-gray-600" />
               </button>
 
               {/* Phone mockup with screenshot */}
-              <div className="relative">
+              <div className="relative w-full max-w-xs md:max-w-sm order-1 md:order-2">
                 <div className="relative bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
                   <div className="bg-gray-800 rounded-[2.5rem] p-1">
                     <div className="bg-white rounded-[2rem] overflow-hidden">
@@ -117,11 +101,12 @@ const Screenshots = () => {
                       </div>
                       
                       {/* Screenshot */}
-                      <div className="relative h-[600px] overflow-hidden">
+                      <div className="relative aspect-[9/19.5] overflow-hidden">
                         <img
                           src={screenshots[currentSlide].image}
                           alt={screenshots[currentSlide].title}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                         
                         {/* Overlay to simulate app interface */}
@@ -150,7 +135,7 @@ const Screenshots = () => {
               {/* Next button */}
               <button
                 onClick={nextSlide}
-                className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
+                className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10 order-3 md:order-3"
                 aria-label="Image suivante"
               >
                 <ChevronRight className="h-6 w-6 text-gray-600" />
@@ -185,7 +170,7 @@ const Screenshots = () => {
           </div>
 
           {/* Thumbnail gallery */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+          <div className="mt-16 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 max-w-4xl mx-auto">
             {screenshots.map((screenshot, index) => (
               <button
                 key={index}
@@ -201,6 +186,7 @@ const Screenshots = () => {
                     src={screenshot.image}
                     alt={screenshot.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 </div>

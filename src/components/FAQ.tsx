@@ -45,6 +45,12 @@ const FAQ = () => {
     setOpenQuestion(openQuestion === index ? null : index);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent, index: number) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      toggleQuestion(index);
+    }
+  };
+
   return (
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,15 +63,18 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4" role="region" aria-labelledby="faq-title">
           {faqs.map((faq, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <button
-                className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
+              <div
+                role="button"
+                tabIndex={0}
+                className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
                 onClick={() => toggleQuestion(index)}
+                onKeyDown={(e) => handleKeyDown(e, index)}
                 aria-expanded={openQuestion === index}
                 aria-controls={`faq-answer-${index}`}
               >
@@ -85,10 +94,12 @@ const FAQ = () => {
                     <ChevronDown className="h-6 w-6 text-gray-500" />
                   )}
                 </div>
-              </button>
+              </div>
               
               <div
                 id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
                 className={`overflow-hidden transition-all duration-300 ${
                   openQuestion === index ? 'max-h-96 pb-6' : 'max-h-0'
                 }`}
