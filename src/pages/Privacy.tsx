@@ -1,11 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 
 const Privacy = () => {
   const { t } = useTranslation();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 text-gray-800">
+      <Helmet>
+        <title>{t('privacy_title')}</title>
+        <meta name="description" content={t('privacy_intro_desc')} />
+      </Helmet>
       <h1 className="text-4xl font-bold mb-6 text-gray-900">{t('privacy_title')}</h1>
       <p className="text-sm text-gray-500 mb-8">Last updated: August 05, 2025</p>
 

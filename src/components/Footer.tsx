@@ -118,43 +118,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Keywords for SEO */}
-        <div className="mt-8 text-xs text-gray-600 text-center">
-          <p>
-            {t('footer_keywords')}
-          </p>
-        </div>
-
-        {/* Language Selector */}
-        <div className="mt-8 text-center">
-          <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={i18n.language} className="bg-gray-800 text-white rounded-md p-2">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ar">العربية</option>
-            <option value="bn">বাংলা</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="it">Italiano</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="mr">मराठी</option>
-            <option value="nl">Nederlands</option>
-            <option value="pa">ਪੰਜਾਬੀ</option>
-            <option value="pl">Polski</option>
-            <option value="pt">Português</option>
-            <option value="ro">Română</option>
-            <option value="ru">Русский</option>
-            <option value="sw">Kiswahili</option>
-            <option value="ta">தமிழ்</option>
-            <option value="te">తెలుగు</option>
-            <option value="tr">Türkçe</option>
-            <option value="ur">اردو</option>
-            <option value="zh">中文</option>
-          </select>
-        </div>
       </div>
     </footer>
   );

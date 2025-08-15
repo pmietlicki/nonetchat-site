@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
-import { I18nextProvider } from 'react-i18next';
+import { I18nextProvider, useTranslation } from 'react-i18next';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import i18n from './i18n';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -14,18 +15,48 @@ import Footer from './components/Footer';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 
+import Seo from './components/Seo';
+
 // Component for the main landing page content
-const HomePage = () => (
-  <main>
-    <Hero />
-    <Features />
-    <Technology />
-    <Security />
-    <Screenshots />
-    <FAQ />
-    <CTA />
-  </main>
-);
+const HomePage = () => {
+  const { t } = useTranslation();
+  const softwareAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'NoNetChat',
+    operatingSystem: 'Android',
+    applicationCategory: 'CommunicationApplication',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8', // Example value
+      ratingCount: '120' // Example value
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    }
+  };
+
+  return (
+    <main>
+      <Helmet>
+        <title>{t('hero_title_1') + t('hero_title_2') + t('hero_title_3')}</title>
+        <meta name="description" content={t('hero_subtitle')} />
+        <script type="application/ld+json">
+          {JSON.stringify(softwareAppSchema)}
+        </script>
+      </Helmet>
+      <Hero />
+      <Features />
+      <Technology />
+      <Security />
+      <Screenshots />
+      <FAQ />
+      <CTA />
+    </main>
+  );
+};
 
 const AppContent = () => {
   const location = useLocation();
@@ -35,6 +66,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      <Seo />
       <Header />
       <div className="flex-grow">
         <Routes>

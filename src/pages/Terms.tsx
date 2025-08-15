@@ -1,11 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 
 const Terms = () => {
   const { t } = useTranslation();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+      <Helmet>
+        <title>{t('terms_title')}</title>
+        <meta name="description" content={t('terms_intro')} />
+      </Helmet>
       <h1 className="text-3xl font-bold mb-4">{t('terms_title')}</h1>
       <p className="mb-4">
         {t('terms_intro')}

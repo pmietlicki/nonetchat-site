@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 
 const FAQ = () => {
   const { t } = useTranslation();
@@ -41,6 +42,19 @@ const FAQ = () => {
     }
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+
   const toggleQuestion = (index: number) => {
     setOpenQuestion(openQuestion === index ? null : index);
   };
@@ -53,6 +67,11 @@ const FAQ = () => {
 
   return (
     <section id="faq" className="py-20 bg-gray-50">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
