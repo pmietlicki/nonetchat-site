@@ -167,5 +167,17 @@
   "terms_termination": "Reziliere",
   "terms_termination_desc": "Putem rezilia sau suspenda accesul dvs. la aplicația noastră imediat, fără notificare prealabilă sau răspundere, din orice motiv, inclusiv, fără limitare, dacă încălcați termenii.",
   "terms_contact": "Contactați-ne",
-  "terms_contact_desc": "Dacă aveți întrebări despre acești termeni, vă rugăm să ne contactați la"
+  "terms_contact_desc": "Dacă aveți întrebări despre acești termeni, vă rugăm să ne contactați la",
+  "header_webapp": "Aplicație Web",
+  "webapp_section_eyebrow": "NoNetChat pentru Web",
+  "webapp_title": "Conversați fără instalare, direct din browser.",
+  "webapp_subtitle": "Experiența NoNetChat, direct accesibilă. Ideal pentru utilizare pe desktop.",
+  "webapp_cta": "Lansați NoNetChat Web",
+  "webapp_feature_1_title": "Acces Instantaneu",
+  "webapp_feature_1_desc": "Nu este necesară descărcarea. Lansați aplicația și începeți să conversați direct din browser.",
+  "webapp_feature_2_title": "Multi-platformă",
+  "webapp_feature_2_desc": "Funcționează pe orice dispozitiv cu un browser modern, inclusiv desktop-uri (Windows, macOS, Linux) și mobile (iOS, Android) datorită PWA-ului nostru instalabil.",
+  "webapp_feature_3_title": "Securitate Păstrată",
+  "webapp_feature_3_desc": "Bucurați-vă de aceeași criptare end-to-end și garanții de confidențialitate ca și aplicația mobilă.",
+  "cta_web_access": "Acces Instantaneu"
 }

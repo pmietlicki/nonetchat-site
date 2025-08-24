@@ -167,5 +167,17 @@
   "terms_termination": "Fesih",
   "terms_termination_desc": "Şartları ihlal etmeniz de dahil olmak üzere herhangi bir nedenle, önceden bildirimde bulunmaksızın veya sorumluluk üstlenmeksizin uygulamamıza erişiminizi derhal sonlandırabilir veya askıya alabiliriz.",
   "terms_contact": "Bize Ulaşın",
-  "terms_contact_desc": "Bu şartlar hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:"
+  "terms_contact_desc": "Bu şartlar hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:",
+  "header_webapp": "Web Uygulaması",
+  "webapp_section_eyebrow": "Web için NoNetChat",
+  "webapp_title": "Kurulum olmadan, tarayıcınızdan sohbet edin.",
+  "webapp_subtitle": "Doğrudan erişilebilen NoNetChat deneyimi. Masaüstü kullanımı için ideal.",
+  "webapp_cta": "NoNetChat Web'i Başlat",
+  "webapp_feature_1_title": "Anında Erişim",
+  "webapp_feature_1_desc": "İndirme gerekmez. Uygulamayı başlatın ve doğrudan tarayıcınızdan sohbete başlayın.",
+  "webapp_feature_2_title": "Çapraz Platform",
+  "webapp_feature_2_desc": "Yüklenebilir PWA'mız sayesinde masaüstü bilgisayarlar (Windows, macOS, Linux) ve mobil cihazlar (iOS, Android) dahil olmak üzere modern bir tarayıcıya sahip herhangi bir cihazda çalışır.",
+  "webapp_feature_3_title": "Korunmuş Güvenlik",
+  "webapp_feature_3_desc": "Mobil uygulama ile aynı uçtan uca şifreleme ve gizlilik garantilerinin keyfini çıkarın.",
+  "cta_web_access": "Anında Erişim"
 }

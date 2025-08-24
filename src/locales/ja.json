@@ -167,5 +167,17 @@
   "terms_termination": "終了",
   "terms_termination_desc": "当社は、お客様が本規約に違反した場合を含め、いかなる理由であれ、事前の通知または責任を負うことなく、当社のアプリケーションへのアクセスを直ちに終了または一時停止することがあります。",
   "terms_contact": "お問い合わせ",
-  "terms_contact_desc": "これらの規約についてご不明な点がございましたら、までお問い合わせください。"
+  "terms_contact_desc": "これらの規約についてご不明な点がございましたら、までお問い合わせください。",
+  "header_webapp": "ウェブアプリ",
+  "webapp_section_eyebrow": "ウェブ向けNoNetChat",
+  "webapp_title": "インストール不要で、ブラウザからチャット。",
+  "webapp_subtitle": "NoNetChat体験を、直接アクセス。デスクトップでの利用に最適です。",
+  "webapp_cta": "NoNetChatウェブを起動",
+  "webapp_feature_1_title": "インスタントアクセス",
+  "webapp_feature_1_desc": "ダウンロードは不要です。アプリを起動し、ブラウザから直接チャットを開始します。",
+  "webapp_feature_2_title": "クロスプラットフォーム",
+  "webapp_feature_2_desc": "インストール可能なPWAのおかげで、デスクトップ（Windows、macOS、Linux）やモバイル（iOS、Android）など、最新のブラウザを搭載したあらゆるデバイスで動作します。",
+  "webapp_feature_3_title": "セキュリティの維持",
+  "webapp_feature_3_desc": "モバイルアプリケーションと同じエンドツーエンドの暗号化とプライバシー保証をお楽しみください。",
+  "cta_web_access": "インスタントアクセス"
 }

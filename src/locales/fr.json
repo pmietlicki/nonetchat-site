@@ -167,5 +167,17 @@
   "terms_termination": "Résiliation",
   "terms_termination_desc": "Nous pouvons résilier ou suspendre votre accès à notre application immédiatement, sans préavis ni responsabilité, pour quelque raison que ce soit, y compris, sans s'y limiter, si vous ne respectez pas les conditions.",
   "terms_contact": "Contactez-nous",
-  "terms_contact_desc": "Si vous avez des questions sur ces conditions, veuillez nous contacter à"
+  "terms_contact_desc": "Si vous avez des questions sur ces conditions, veuillez nous contacter à",
+  "header_webapp": "Web App",
+  "webapp_section_eyebrow": "NoNetChat pour le Web",
+  "webapp_title": "Discutez sans installation, depuis votre navigateur.",
+  "webapp_subtitle": "L'expérience NoNetChat, directement accessible. Idéal pour une utilisation sur ordinateur.",
+  "webapp_cta": "Lancer NoNetChat Web",
+  "webapp_feature_1_title": "Accès Instantané",
+  "webapp_feature_1_desc": "Aucun téléchargement requis. Lancez l'application et commencez à discuter directement depuis votre navigateur.",
+  "webapp_feature_2_title": "Multi-plateforme",
+  "webapp_feature_2_desc": "Fonctionne sur n'importe quel appareil avec un navigateur moderne, y compris les ordinateurs (Windows, macOS, Linux) et les mobiles (iOS, Android) grâce à notre PWA installable.",
+  "webapp_feature_3_title": "Sécurité Préservée",
+  "webapp_feature_3_desc": "Bénéficiez du même chiffrement de bout-en-bout et de la même confidentialité que l'application mobile.",
+  "cta_web_access": "Accès instantané"
 }

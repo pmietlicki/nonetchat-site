@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import i18n from './i18n';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import WebApp from './components/WebApp';
 import Features from './components/Features';
 import Technology from './components/Technology';
 import Security from './components/Security';
@@ -48,6 +49,7 @@ const HomePage = () => {
         </script>
       </Helmet>
       <Hero />
+      <WebApp />
       <Features />
       <Technology />
       <Security />

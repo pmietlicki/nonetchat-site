@@ -167,5 +167,17 @@
   "terms_termination": "Penghentian",
   "terms_termination_desc": "Kami dapat menghentikan atau menangguhkan akses Anda ke aplikasi kami segera, tanpa pemberitahuan atau kewajiban sebelumnya, dengan alasan apa pun, termasuk, tanpa batasan, jika Anda melanggar ketentuan.",
   "terms_contact": "Hubungi Kami",
-  "terms_contact_desc": "Jika Anda memiliki pertanyaan tentang ketentuan ini, silakan hubungi kami di"
+  "terms_contact_desc": "Jika Anda memiliki pertanyaan tentang ketentuan ini, silakan hubungi kami di",
+  "header_webapp": "Aplikasi Web",
+  "webapp_section_eyebrow": "NoNetChat untuk Web",
+  "webapp_title": "Mengobrol tanpa instalasi, dari browser Anda.",
+  "webapp_subtitle": "Pengalaman NoNetChat, dapat diakses secara langsung. Ideal untuk penggunaan desktop.",
+  "webapp_cta": "Luncurkan NoNetChat Web",
+  "webapp_feature_1_title": "Akses Instan",
+  "webapp_feature_1_desc": "Tidak perlu mengunduh. Luncurkan aplikasi dan mulai mengobrol langsung dari browser Anda.",
+  "webapp_feature_2_title": "Lintas Platform",
+  "webapp_feature_2_desc": "Bekerja di perangkat apa pun dengan browser modern, termasuk desktop (Windows, macOS, Linux) dan seluler (iOS, Android) berkat PWA kami yang dapat diinstal.",
+  "webapp_feature_3_title": "Keamanan Terjaga",
+  "webapp_feature_3_desc": "Nikmati enkripsi ujung-ke-ujung dan jaminan privasi yang sama dengan aplikasi seluler.",
+  "cta_web_access": "Akses Instan"
 }

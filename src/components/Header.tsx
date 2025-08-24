@@ -112,6 +112,9 @@ const Header = () => {
             <a href="/#faq" className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
               }`}>{t('footer_faq')}</a>
+            <a href="https://web.nonetchat.com" target="_blank" rel="noopener noreferrer" className={`font-semibold hover:opacity-80 transition-all duration-300 ${
+                isScrolled ? 'text-brand-blue hover:text-blue-700' : 'text-white hover:text-brand-teal'
+              }`}>{t('header_webapp', 'Web App')}</a>
             <LanguageSelector />
             <a 
               href="https://play.google.com/store/apps/details?id=fr.pmietlicki.nonetchat"
@@ -144,6 +147,7 @@ const Header = () => {
               <a onClick={() => handleNavClick('#technologie')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_tech')}</a>
               <a onClick={() => handleNavClick('#securite')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_security')}</a>
               <a onClick={() => handleNavClick('#faq')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_faq')}</a>
+              <a href="https://web.nonetchat.com" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-brand-blue font-semibold hover:bg-gray-50 w-full text-left">{t('header_webapp', 'Web App')}</a>
               <div className="px-3 py-2">
                 <LanguageSelector inMenu={true} />
               </div>

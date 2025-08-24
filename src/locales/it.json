@@ -167,5 +167,17 @@
   "terms_termination": "Risoluzione",
   "terms_termination_desc": "Possiamo risolvere o sospendere il tuo accesso alla nostra applicazione immediatamente, senza preavviso o responsabilità, per qualsiasi motivo, incluso, a titolo esemplificativo, se violi i termini.",
   "terms_contact": "Contattaci",
-  "terms_contact_desc": "Se hai domande su questi termini, ti preghiamo di contattarci a"
+  "terms_contact_desc": "Se hai domande su questi termini, ti preghiamo di contattarci a",
+  "header_webapp": "App Web",
+  "webapp_section_eyebrow": "NoNetChat per il Web",
+  "webapp_title": "Chatta senza installazione, dal tuo browser.",
+  "webapp_subtitle": "L'esperienza NoNetChat, direttamente accessibile. Ideale per l'uso su desktop.",
+  "webapp_cta": "Avvia NoNetChat Web",
+  "webapp_feature_1_title": "Accesso Immediato",
+  "webapp_feature_1_desc": "Nessun download richiesto. Avvia l'app e inizia a chattare direttamente dal tuo browser.",
+  "webapp_feature_2_title": "Multipiattaforma",
+  "webapp_feature_2_desc": "Funziona su qualsiasi dispositivo con un browser moderno, inclusi desktop (Windows, macOS, Linux) e mobili (iOS, Android) grazie alla nostra PWA installabile.",
+  "webapp_feature_3_title": "Sicurezza Preservata",
+  "webapp_feature_3_desc": "Goditi la stessa crittografia end-to-end e le stesse garanzie di privacy dell'applicazione mobile.",
+  "cta_web_access": "Accesso Immediato"
 }

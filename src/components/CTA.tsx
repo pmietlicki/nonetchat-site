@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Shield } from 'lucide-react';
+import { Download, Shield, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const CTA = () => {
@@ -44,16 +44,16 @@ const CTA = () => {
           </a>
           
           <a
-            href="https://apkpure.com/fr/nonetchat/fr.pmietlicki.nonetchat"
+            href="https://web.nonetchat.com"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-3 min-w-[250px]"
-            aria-label="Télécharger NoNetChat APK sur APKPure"
+            aria-label={t('webapp_cta', 'Lancer NoNetChat Web')}
           >
-            <Download className="h-6 w-6" />
+            <Globe className="h-6 w-6" />
             <div className="text-left">
-              <div className="text-sm text-blue-200">{t('cta_dl_apk')}</div>
-              <div className="font-bold">APKPure</div>
+              <div className="text-sm text-blue-200">{t('cta_web_access', 'Accès instantané')}</div>
+              <div className="font-bold">{t('header_webapp', 'Web App')}</div>
             </div>
           </a>
         </div>

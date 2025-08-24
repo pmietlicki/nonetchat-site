@@ -167,5 +167,17 @@
   "terms_termination": "Beëindiging",
   "terms_termination_desc": "We kunnen uw toegang tot onze applicatie onmiddellijk beëindigen of opschorten, zonder voorafgaande kennisgeving of aansprakelijkheid, om welke reden dan ook, inclusief, maar niet beperkt tot, als u de voorwaarden schendt.",
   "terms_contact": "Neem contact met ons op",
-  "terms_contact_desc": "Als u vragen heeft over deze voorwaarden, neem dan contact met ons op via"
+  "terms_contact_desc": "Als u vragen heeft over deze voorwaarden, neem dan contact met ons op via",
+  "header_webapp": "Web-app",
+  "webapp_section_eyebrow": "NoNetChat voor het web",
+  "webapp_title": "Chat zonder installatie, vanuit uw browser.",
+  "webapp_subtitle": "De NoNetChat-ervaring, direct toegankelijk. Ideaal voor desktopgebruik.",
+  "webapp_cta": "Start NoNetChat Web",
+  "webapp_feature_1_title": "Directe toegang",
+  "webapp_feature_1_desc": "Geen download vereist. Start de app en begin direct met chatten vanuit uw browser.",
+  "webapp_feature_2_title": "Cross-platform",
+  "webapp_feature_2_desc": "Werkt op elk apparaat met een moderne browser, inclusief desktops (Windows, macOS, Linux) en mobiele telefoons (iOS, Android) dankzij onze installeerbare PWA.",
+  "webapp_feature_3_title": "Beveiliging behouden",
+  "webapp_feature_3_desc": "Geniet van dezelfde end-to-end-encryptie en privacygaranties als de mobiele applicatie.",
+  "cta_web_access": "Directe toegang"
 }

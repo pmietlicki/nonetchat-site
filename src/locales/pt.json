@@ -167,5 +167,17 @@
   "terms_termination": "Rescisão",
   "terms_termination_desc": "Podemos rescindir ou suspender seu acesso ao nosso aplicativo imediatamente, sem aviso prévio ou responsabilidade, por qualquer motivo, incluindo, sem limitação, se você violar os termos.",
   "terms_contact": "Contate-Nos",
-  "terms_contact_desc": "Se você tiver alguma dúvida sobre estes termos, entre em contato conosco em"
+  "terms_contact_desc": "Se você tiver alguma dúvida sobre estes termos, entre em contato conosco em",
+  "header_webapp": "App Web",
+  "webapp_section_eyebrow": "NoNetChat para a Web",
+  "webapp_title": "Converse sem instalação, a partir do seu navegador.",
+  "webapp_subtitle": "A experiência NoNetChat, diretamente acessível. Ideal para uso em desktop.",
+  "webapp_cta": "Iniciar NoNetChat Web",
+  "webapp_feature_1_title": "Acesso Instantâneo",
+  "webapp_feature_1_desc": "Nenhum download necessário. Inicie o aplicativo e comece a conversar diretamente do seu navegador.",
+  "webapp_feature_2_title": "Multiplataforma",
+  "webapp_feature_2_desc": "Funciona em qualquer dispositivo com um navegador moderno, incluindo desktops (Windows, macOS, Linux) e celulares (iOS, Android) graças ao nosso PWA instalável.",
+  "webapp_feature_3_title": "Segurança Preservada",
+  "webapp_feature_3_desc": "Desfrute da mesma criptografia de ponta a ponta e garantias de privacidade que o aplicativo móvel.",
+  "cta_web_access": "Acesso Instantâneo"
 }

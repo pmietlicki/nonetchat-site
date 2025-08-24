@@ -167,5 +167,17 @@
   "terms_termination": "해지",
   "terms_termination_desc": "당사는 귀하가 약관을 위반하는 경우를 포함하되 이에 국한되지 않는 어떠한 이유로든 사전 통지나 책임 없이 당사 애플리케이션에 대한 귀하의 액세스를 즉시 종료하거나 일시 중단할 수 있습니다.",
   "terms_contact": "문의하기",
-  "terms_contact_desc": "이 약관에 대해 질문이 있는 경우 다음 주소로 문의하십시오."
+  "terms_contact_desc": "이 약관에 대해 질문이 있는 경우 다음 주소로 문의하십시오.",
+  "header_webapp": "웹 앱",
+  "webapp_section_eyebrow": "웹용 NoNetChat",
+  "webapp_title": "설치 없이 브라우저에서 바로 채팅하세요.",
+  "webapp_subtitle": "NoNetChat 경험을 바로 이용할 수 있습니다. 데스크톱 사용에 이상적입니다.",
+  "webapp_cta": "NoNetChat 웹 시작",
+  "webapp_feature_1_title": "즉시 액세스",
+  "webapp_feature_1_desc": "다운로드가 필요 없습니다. 앱을 실행하고 브라우저에서 바로 채팅을 시작하세요.",
+  "webapp_feature_2_title": "크로스 플랫폼",
+  "webapp_feature_2_desc": "설치 가능한 PWA 덕분에 데스크톱(Windows, macOS, Linux) 및 모바일(iOS, Android)을 포함한 최신 브라우저가 있는 모든 장치에서 작동합니다.",
+  "webapp_feature_3_title": "보안 유지",
+  "webapp_feature_3_desc": "모바일 애플리케이션과 동일한 종단 간 암호화 및 개인 정보 보호 보증을 즐기십시오.",
+  "cta_web_access": "즉시 액세스"
 }
