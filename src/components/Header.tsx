@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Share2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -7,15 +7,32 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isShareSupported, setIsShareSupported] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+    if (navigator.share && typeof navigator.share === 'function') {
+      setIsShareSupported(true);
+    }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleShare = async () => {
+    const shareData = {
+      title: t('hero_title_1') + t('hero_title_2') + t('hero_title_3'),
+      text: t('hero_subtitle'),
+      url: 'https://nonetchat.com',
+    };
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.error("Share failed:", err);
+    }
+  };
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -115,6 +132,17 @@ const Header = () => {
             <a href="https://web.nonetchat.com" target="_blank" rel="noopener noreferrer" className={`font-semibold hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-brand-blue hover:text-blue-700' : 'text-white hover:text-brand-teal'
               }`}>{t('header_webapp', 'Web App')}</a>
+            {isShareSupported && (
+              <button
+                onClick={handleShare}
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                }`}
+                aria-label="Partager le site"
+              >
+                <Share2 className="h-5 w-5" />
+              </button>
+            )}
             <LanguageSelector />
             <a 
               href="https://play.google.com/store/apps/details?id=fr.pmietlicki.nonetchat"
@@ -127,15 +155,28 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <button
-            className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
-              isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
-            }`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Menu de navigation"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center md:hidden">
+            {isShareSupported && (
+              <button
+                onClick={handleShare}
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                }`}
+                aria-label="Partager le site"
+              >
+                <Share2 className="h-6 w-6" />
+              </button>
+            )}
+            <button
+              className={`p-2 rounded-lg transition-colors duration-300 ${
+                isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+              }`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu de navigation"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
