@@ -99,7 +99,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-6">
             <a href="/#accueil" className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
-              }`}>{t('Accueil')}</a>
+              }`}>{t('header_home')}</a>
             <a href="/#fonctionnalites" className={`hover:opacity-80 transition-all duration-300 ${
                 isScrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-white hover:text-brand-teal'
               }`}>{t('footer_features')}</a>
@@ -142,7 +142,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a onClick={() => handleNavClick('#accueil')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('Accueil')}</a>
+              <a onClick={() => handleNavClick('#accueil')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('header_home')}</a>
               <a onClick={() => handleNavClick('#fonctionnalites')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_features')}</a>
               <a onClick={() => handleNavClick('#technologie')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_tech')}</a>
               <a onClick={() => handleNavClick('#securite')} className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">{t('footer_security')}</a>
